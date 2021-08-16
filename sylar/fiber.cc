@@ -9,7 +9,7 @@ namespace sylar {
 
 static Logger::ptr g_logger = SYLAR_LOG_NAME("system");
 
-static std::atomic<uint64_t> s_fiber_id {0};
+static std::atomic<uint64_t> s_fiber_id {0}; // 静态成员在线程内可见
 static std::atomic<uint64_t> s_fiber_count {0};
 
 static thread_local Fiber* t_fiber = nullptr;
